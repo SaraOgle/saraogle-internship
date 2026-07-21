@@ -8,6 +8,7 @@ const Author = () => {
   const { id } = useParams();
   const [author, setAuthor] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [following, setFollowing] = useState(false);
 
   useEffect(() => {
     const fetchAuthor = async () => {
@@ -24,6 +25,14 @@ const Author = () => {
     };
     fetchAuthor();
   }, [id]);
+
+  const handleFollow = () => {
+    setFollowing((prev) => !prev);
+    setAuthor((prev) => ({
+      ...prev,
+      followers: following ? prev.followers - 1 : prev.followers + 1,
+    }));
+  };
 
   if (loading) return (
     <div id="wrapper">
@@ -130,8 +139,12 @@ const Author = () => {
                   <div className="profile_follow de-flex">
                     <div className="de-flex-col">
                       <div className="profile_follower">{author.followers} followers</div>
-                      <Link to="#" className="btn-main">
-                        Follow
+                      <Link
+                        to="#"
+                        className="btn-main"
+                        onClick={handleFollow}
+                      >
+                        {following ? "Unfollow" : "Follow"}
                       </Link>
                     </div>
                   </div>

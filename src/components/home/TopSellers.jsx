@@ -57,7 +57,7 @@ const TopSellers = () => {
   ))
 ) : (
   users.map((users) => (
-    <li key={users.id}>
+    <li key={users.id} data-aos="fade">
       <div className="author_list_pp">
         <Link to={`/author/${users.authorId}`}>
           <img className="lazy pp-author" src={users.authorImage} alt="" />

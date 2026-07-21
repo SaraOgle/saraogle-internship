@@ -81,7 +81,7 @@ const NewItems = () => {
             ) : (
               <OwlCarousel className="owl-theme" {...options}>
                 {items.map((item) => (
-                <div key={item.id}>
+                <div key={item.id} data-aos="fade">
                 <Items item={item} />
                 </div>
                 ))}
