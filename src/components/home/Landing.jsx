@@ -31,12 +31,12 @@ const Landing = () => {
                 interchangeable
               </p>
               <div className="spacer-10"></div>
-              <Link className="btn-main lead" to="/explore" data-aos="fade" data-aos-delay="300"data-aos-delay="700">
+              <Link className="btn-main lead" to="/explore" data-aos="fade" data-aos-delay="700">
                 Explore
               </Link>
               <div className="mb-sm-30"></div>
             </div>
-            <div className="col-md-6 xs-hide" data-aos="fade" data-aos-delay="300"data-aos-delay="700">
+            <div className="col-md-6 xs-hide" data-aos="fade" data-aos-delay="700">
               <img src={NFT} className="lazy img-fluid" alt="" />
             </div>
           </div>
